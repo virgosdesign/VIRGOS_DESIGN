@@ -12,10 +12,9 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import AuroraBackground from '~/components/react/AuroraBackground.astro';
-
-
 import CardStack from '@components/react/CardStack.astro'
 import InfiniteMovingCards from '@components/react/InfiniteMovingCards.astro'
+
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
@@ -109,9 +108,9 @@ const metadata = {
   <!-- Content Widget **************** -->
 
   <Content
-    isReversed
+    isReversed={true}
     tagline='Inside template'
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
+    title="Virgos' Blueprint: Fun Meets Functionality!"
     items={[
       {
         title: 'Built on top of Astro 4.0',
@@ -145,7 +144,7 @@ const metadata = {
 
   <!-- Content Widget **************** -->
 
-  <!-- <Content
+  <Content
     isAfterContent
     items={[
       {
@@ -177,7 +176,7 @@ const metadata = {
     <Fragment slot='bg'>
       <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
-  </Content> -->
+  </Content>
 
   <!-- Content Widget **************** -->
 
