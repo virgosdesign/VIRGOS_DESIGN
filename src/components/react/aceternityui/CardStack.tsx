@@ -18,6 +18,7 @@ export const CardStack = ({ items, offset, scaleFactor }: { items: Card[]; offse
   const [cards, setCards] = useState<Card[]>(items);
 
   useEffect(() => {
+    console.log("FOO")
     startFlipping();
 
     return () => clearInterval(interval);

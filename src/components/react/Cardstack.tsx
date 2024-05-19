@@ -26,17 +26,6 @@ export const Highlight = ({ children, className }: { children: React.ReactNode; 
 const CARDS = [
   {
     id: 0,
-    name: 'Manu Arora',
-    designation: 'Senior Software Engineer',
-    content: (
-      <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my project. Framer motion is a godsend ngl
-        tbh fam 🙏
-      </p>
-    ),
-  },
-  {
-    id: 1,
     name: 'Elon Musk',
     designation: 'Senior Shitposter',
     content: (
@@ -47,7 +36,7 @@ const CARDS = [
     ),
   },
   {
-    id: 2,
+    id: 1,
     name: 'Tyler Durden',
     designation: 'Manager Project Mayhem',
     content: (
@@ -55,6 +44,17 @@ const CARDS = [
         The first rule of
         <Highlight>Fight Club</Highlight> is that you do not talk about fight club. The second rule of
         <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight club.
+      </p>
+    ),
+  },
+  {
+    id: 2,
+    name: 'Manu Arora',
+    designation: 'Senior Software Engineer',
+    content: (
+      <p>
+        These cards are amazing, <Highlight>I want to use them</Highlight> in my project. Framer motion is a godsend ngl
+        tbh fam 🙏
       </p>
     ),
   },

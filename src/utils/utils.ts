@@ -1,6 +1,6 @@
-import { ClassValue, clsx } from 'clsx';
-
+import type { ClassValue } from 'clsx';
 import { I18N } from 'astrowind:config';
+import { clsx } from 'clsx';
 import {twMerge} from "tailwind-merge";
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
