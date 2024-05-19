@@ -14,6 +14,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 
 import CardStack from '@components/react/CardStack.astro'
+import InfiniteMovingCards from '@components/react/InfiniteMovingCards.astro'
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
@@ -23,6 +24,7 @@ const metadata = {
 <Layout metadata={metadata}>
   cardstack?:
   <CardStack/>
+  <InfiniteMovingCards/>
   <!-- Hero Widget ******************* -->
   <Hero
     actions={[
