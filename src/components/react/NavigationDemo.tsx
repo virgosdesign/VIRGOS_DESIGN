@@ -7,17 +7,17 @@ import { classNames } from '@utils/utils';
 
 export function NavigationDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <Navbar className="top-2" />
-      <p className="text-black dark:text-white">The Navbar will show on top of the page</p>
-    </div>
+    // <div className="relative w-full flex items-center justify-center">
+      <Navbar className="bottom-0" />
+    // </div>
   );
 }
 
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div className={classNames('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50', className)}>
+    // <div className={classNames('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50', className)}>
+    <div className={classNames('absolute bottom-0 inset-x-0 max-w-2xl mx-auto z-50', className)}>
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">

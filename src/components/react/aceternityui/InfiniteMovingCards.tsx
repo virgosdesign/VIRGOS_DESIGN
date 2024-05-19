@@ -1,5 +1,6 @@
-import { classNames } from "@utils/utils";
 import React, { useEffect, useState } from "react";
+
+import { classNames } from "@utils/utils";
 
 export const InfiniteMovingCards = ({
   items,
