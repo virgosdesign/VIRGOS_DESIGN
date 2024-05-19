@@ -1,4 +1,7 @@
+import { ClassValue, clsx } from 'clsx';
+
 import { I18N } from 'astrowind:config';
+import {twMerge} from "tailwind-merge";
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',
@@ -50,3 +53,7 @@ export const toUiAmount = (amount: number) => {
 
   return value;
 };
+
+export const classNames = (...inputs: ClassValue[]) => {
+  return twMerge(clsx(inputs))
+}     

@@ -7,7 +7,10 @@
     "paths": {
       "~/*": [
         "src/*"
-      ]
+      ],
+      "@components/*": ["src/components/*"],
+      "@aceternityui/*": ["src/components/react/aceternityui/*"],
+      "@utils/*": ["src/utils/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
