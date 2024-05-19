@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import AuroraBackground from '~/components/react/AuroraBackground.astro';
 
 
 import CardStack from '@components/react/CardStack.astro'
@@ -22,7 +23,7 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  cardstack?:
+  <AuroraBackground/>
   <CardStack/>
   <InfiniteMovingCards/>
   <!-- Hero Widget ******************* -->
