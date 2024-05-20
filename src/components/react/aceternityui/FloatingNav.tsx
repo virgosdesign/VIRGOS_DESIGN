@@ -22,6 +22,8 @@ export const FloatingNav = ({
   const [placement, setPlacement] = useState('bottom-20');
   const [shadow, setShadow] = useState('shadow-none');
   const [blur, setBlur] = useState('backdrop-blur-none');
+  const [background, setBackground] = useState('bg-none');
+  const [border, setBorder] = useState('border-transparent');
 
   useMotionValueEvent(scrollYProgress, 'change', (current) => {
     const page = document.documentElement;
@@ -34,10 +36,10 @@ export const FloatingNav = ({
     if (typeof current === 'number') {
       let direction = current! - scrollYProgress.getPrevious()!;
       if (direction > 0) {
+        console.log('Scrolling down');
         setShadow(
           'shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'
         );
-        console.log('Scrolling down');
         // Once nav reaches top of screen, it will become fixed there.
         if (X < 0){
           console.log('Set fixed');
@@ -82,7 +84,7 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={classNames(
-          `flex max-w-fit ${position} ${placement} ${shadow} ${blur} z-50 inset-x-0 mx-auto bg-white/20 dark:bg-black/20 border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4`,
+          `flex max-w-fit border ${border} ${position} ${placement} ${shadow} ${blur} ${background} z-50 inset-x-0 mx-auto border  rounded-full z-[5000] px-6 py-2  items-center justify-center space-x-4`,
           className
         )}
       >
@@ -99,10 +101,10 @@ export const FloatingNav = ({
           </a>
         ))}
         <ToggleTheme />
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button>
+        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"> */}
+          <span className="text-sm">Login</span>
+          {/* <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" /> */}
+        {/* </button> */}
       </motion.div>
     </AnimatePresence>
   );
