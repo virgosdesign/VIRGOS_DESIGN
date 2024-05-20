@@ -3,11 +3,11 @@ import React from 'react';
 
 export function MacbookScrollDemo() {
   return (
-    <div className="overflow-hidden dark:bg-[#0B0B0F] bg-white w-full">
+    <div className="overflow-hidden w-full">
       <MacbookScroll
         title={
           <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+            Need to move the styled headline and tagline here. <br /> So it's within the padding.
           </span>
         }
         // badge={

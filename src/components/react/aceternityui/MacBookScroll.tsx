@@ -60,7 +60,7 @@ export const MacbookScroll = ({
   return (
     <div
       ref={ref}
-      className="min-h-[200vh]  flex flex-col items-center py-0 md:py-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
+      className="min-h-[200vh]  flex flex-col items-center py-0 md:pb-8 md:pt-80 justify-start flex-shrink-0 [perspective:800px] transform md:scale-100  scale-[0.35] sm:scale-50"
     >
       <motion.h2
         style={{
@@ -71,7 +71,7 @@ export const MacbookScroll = ({
       >
         {title || (
           <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+            Need to move styled headlines into react component, here <br /> No kidding.
           </span>
         )}
       </motion.h2>
@@ -547,7 +547,7 @@ export const Row = ({ children }: { children: React.ReactNode }) => {
 export const SpeakerGrid = () => {
   return (
     <div
-      className="flex px-[0.5px] gap-[2px] mt-2 h-40"
+      className="flex px-[0.5px] gap-[2px] my-1 h-40 mx-2"
       style={{
         backgroundImage: 'radial-gradient(circle, #08080A 0.5px, transparent 0.5px)',
         backgroundSize: '3px 3px',
