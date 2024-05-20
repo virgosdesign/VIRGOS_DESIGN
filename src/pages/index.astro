@@ -12,8 +12,9 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import AuroraBackground from '~/components/react/AuroraBackground.astro';
-import CardStack from '@components/react/CardStack.astro'
-import InfiniteMovingCards from '@components/react/InfiniteMovingCards.astro'
+import CardStack from '@components/react/CardStack.astro';
+import InfiniteMovingCards from '@components/react/InfiniteMovingCards.astro';
+import MacBookScroll from '~/components/react/MacBookScroll.astro';
 
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
@@ -22,7 +23,8 @@ const metadata = {
 ---
 
 <LandingLayout metadata={metadata}>
-  <AuroraBackground/>
+  <AuroraBackground />
+  <MacBookScroll />
   <!-- <CardStack/> -->
   <!-- <InfiniteMovingCards/> -->
   <!-- Hero Widget ******************* -->
@@ -53,10 +55,6 @@ const metadata = {
       Blogs.
     </Fragment>
   </Hero> -->
-
-  <!-- Note Widget ******************* -->
-
-  <Note />
 
   <!-- Features Widget *************** -->
 
@@ -141,6 +139,10 @@ const metadata = {
       <div class='absolute inset-0 bg-blue-50 dark:bg-transparent'></div>
     </Fragment>
   </Content>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
 
   <!-- Content Widget **************** -->
 
@@ -273,7 +275,7 @@ const metadata = {
   <!-- CallToAction Widget *********** -->
 
   <CallToAction
-    id="contact"
+    id='contact'
     actions={[
       {
         variant: 'primary',
