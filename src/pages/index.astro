@@ -1,6 +1,6 @@
 ---
 import LandingLayout from '~/layouts/LandingLayout.astro';
-
+import HoverBorder from '~/components/react/HoverBorder.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -17,7 +17,9 @@ import InfiniteMovingCards from '@components/react/InfiniteMovingCards.astro';
 import MacBookScroll from '~/components/react/MacBookScroll.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import StickyScrollReveal from '~/components/react/StickyScrollReveal.astro';
-
+import HeroParallax from '~/components/react/HeroParallax.astro';
+import TextGenerateEffect from '~/components/react/TextGenerateEffect.astro';
+import NeumorphicForm from '~/components/NeumorphicForm.astro';
 const metadata = {
   title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
   ignoreTitleTemplate: true,
@@ -26,10 +28,12 @@ const metadata = {
 
 <LandingLayout metadata={metadata}>
   <AuroraBackground />
-
+  <HoverBorder />
+  <NeumorphicForm />
   <MacBookScroll />
   <StickyScrollReveal />
-
+  <HeroParallax />
+  <TextGenerateEffect />
   <!-- <CardStack/> -->
   <!-- <InfiniteMovingCards/> -->
   <!-- Hero Widget ******************* -->

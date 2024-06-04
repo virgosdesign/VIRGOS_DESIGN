@@ -23,7 +23,7 @@ export const FloatingNav = ({
   const [shadow, setShadow] = useState('shadow-none');
   const [blur, setBlur] = useState('backdrop-blur-none');
   const [background, setBackground] = useState('bg-none');
-  const [border, setBorder] = useState('border-transparent');
+  const [border, setBorder] = useState('border border-transparent dark:border-transparent');
 
   useMotionValueEvent(scrollYProgress, 'change', (current) => {
     const page = document.documentElement;
@@ -34,6 +34,12 @@ export const FloatingNav = ({
 
     // Check if current is not undefined and is a number
     if (typeof current === 'number') {
+    console.log("Current:", current)
+      if (current === 0) {
+        setShadow('shadow-none');
+        setBlur('backdrop-blur-none');
+        setBorder('border-transparent dark:border-transparent');
+      }
       let direction = current! - scrollYProgress.getPrevious()!;
       if (direction > 0) {
         console.log('Scrolling down');
@@ -49,6 +55,7 @@ export const FloatingNav = ({
             'shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'
           );
           setBlur('backdrop-blur-lg');
+          setBorder('dark:border-slate-600')
         }
         // Once halfway down second page, nav will hide
         if (Y < -(page.clientHeight/2)) {
@@ -61,8 +68,9 @@ export const FloatingNav = ({
           console.log('set sticky')
           setPosition('absolute');
           setPlacement('bottom-20');
-          setShadow('shadow-none');
-          setBlur('backdrop-blur-none');
+          // setShadow('shadow-none');
+          // setBlur('backdrop-blur-none');
+          // setBorder('border-transparent dark:border-transparent')
         }
       }
     }
@@ -84,7 +92,7 @@ export const FloatingNav = ({
           duration: 0.7,
         }}
         className={classNames(
-          `flex max-w-fit border ${border} ${position} ${placement} ${shadow} ${blur} ${background} z-50 inset-x-0 mx-auto border  rounded-full z-[5000] px-6 py-2  items-center justify-center space-x-4`,
+          `flex max-w-fit border ${border} ${position} ${placement} ${shadow} ${blur} ${background} inset-x-0 mx-auto border rounded-full z-[5000] px-6 py-2 items-center justify-center space-x-4`,
           className
         )}
       >
