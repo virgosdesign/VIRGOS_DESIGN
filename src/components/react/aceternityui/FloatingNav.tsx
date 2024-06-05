@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 
+import { MenuToggle } from '../custom/MenuToggle';
 import { ToggleTheme } from '../ToggleTheme';
 import { classNames } from '@utils/utils';
 
@@ -91,7 +92,7 @@ export const FloatingNav = ({
 
   return (
     <AnimatePresence mode="wait">
-      <motion.div
+      <motion.nav
         id="floating-nav"
         initial={{
           opacity: 1,
@@ -109,62 +110,50 @@ export const FloatingNav = ({
           className
         )}
       >
-        {expanded && 
-        <AnimatePresence mode="wait">
-        {leftNavigation.map((navItem: any, idx: number) => (
-          <motion.a
-            key={`link=${idx}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7 }}
-            //exit={{ opacity: 1 }}
-            href={navItem.link}
-            className={classNames(
-              'relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </motion.a>
-        ))}
+        <AnimatePresence>
+          {expanded &&
+            leftNavigation.map((navItem: any, idx: number) => (
+              <motion.a
+                key={`link=${idx}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                exit={{ opacity: 0 }}
+                href={navItem.link}
+                className={classNames(
+                  'relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
+                )}
+              >
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className="hidden sm:block text-sm">{navItem.name}</span>
+              </motion.a>
+            ))}
         </AnimatePresence>
-        }
         <ToggleTheme />
-        {/* <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full"> */}
-        <span className="text-sm">Login</span>
-        {expanded && rightNavigation.map((navItem: any, idx: number) => (
-          <a
-            key={`link=${idx}`}
-            href={navItem.link}
-            className={classNames(
-              'relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm">{navItem.name}</span>
-          </a>
-        ))}
+        <button onMouseOver={()=> setExpanded(true)}
+        onMouseLeave={() => setExpanded(false)}>VIRGOS</button>
+        <AnimatePresence>
+          {expanded &&
+            rightNavigation.map((navItem: any, idx: number) => (
+              <motion.a
+                key={`link=${idx}`}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7 }}
+                exit={{ opacity: 0 }}
+                href={navItem.link}
+                className={classNames(
+                  'relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500'
+                )}
+              >
+                <span className="block sm:hidden">{navItem.icon}</span>
+                <span className="hidden sm:block text-sm">{navItem.name}</span>
+              </motion.a>
+            ))}
+        </AnimatePresence>
         {/* <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" /> */}
         {/* </button> */}
-      </motion.div>
-      {/* <motion.div
-        id="hamburger"
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: visible ? 0 : 1,
-        }}
-        transition={{
-          duration: 0.7,
-        }}
-        className={classNames(
-          `flex max-w-fit border ${border} ${position} ${placement} ${shadow} ${blur} ${background} inset-x-0 mx-auto border rounded-full z-[5000] px-6 py-2 items-center justify-center space-x-4`,
-          className
-        )}
-      >
-        Logo
-      </motion.div> */}
+      </motion.nav>
     </AnimatePresence>
   );
 };
